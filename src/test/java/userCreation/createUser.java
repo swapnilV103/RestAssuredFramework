@@ -14,7 +14,7 @@ public class createUser {
 	
 	
 	/*In the given section : Content type, set cookies, add Auth, add parameters, set headers etc..
-	 * 
+	 * In the when section: Get, Put, Post, Delete
 	 */
 	
 	
