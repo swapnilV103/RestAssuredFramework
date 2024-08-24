@@ -19,7 +19,7 @@ public class createUser {
 	 */
 	
 	
-	
+	  
 	
 	int ID=0;
 
@@ -37,7 +37,7 @@ public class createUser {
 			.statusCode(200)
 			.body("data[0].id",equalTo(7))
 			//.log().body()
-			.log().all();		
+			.log().all();		 //display entire response in the console
 		
 	}
 	
