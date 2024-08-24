@@ -15,6 +15,7 @@ public class createUser {
 	
 	/*In the given section : Content type, set cookies, add Auth, add parameters, set headers etc..
 	 * In the when section: Get, Put, Post, Delete
+	 * In the Then section: Verify status code, o/p data, response body, Extract response Extract Headers
 	 */
 	
 	
