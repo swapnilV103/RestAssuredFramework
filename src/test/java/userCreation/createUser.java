@@ -55,5 +55,29 @@ public class createUser {
 	//		.log().all();	
 	}
 	
+	
+	@Test (priority = 3)
+	void updateUser() {
+		
+		HashMap<String, String> hm = new HashMap<String, String>();
+		
+		hm.put("name", "Sushant");
+		hm.put("job", "SWE");
+		
+		given()
+			.contentType("application/json")
+			.body(hm)
+		
+		.when()
+			.put("https://reqres.in/api/users/"+ID)
+		
+		.then()
+			.statusCode(200)
+			.log().all();
+			
+		
+		
+	}
+	
 
 }
