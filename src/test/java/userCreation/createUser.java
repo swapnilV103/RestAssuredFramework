@@ -17,8 +17,6 @@ public class createUser {
 	 * In the when section: Get, Put, Post, Delete
 	 * In the Then section: Verify status code, o/p data, response body, Extract response Extract Headers
 	 */
-	
-	
 	  
 	
 	int ID=0;
@@ -56,7 +54,8 @@ public class createUser {
 		
 		.when()
 			.post("https://reqres.in/api/users")
-			.jsonPath().getInt("id");
+			.jsonPath().getInt("id"); // the request is ended with the semicolon
+		//and now the response will be shared in the ID variable
 			
 		
 	//	.then()
@@ -65,7 +64,7 @@ public class createUser {
 	}
 	
 	
-	@Test (priority = 3)
+	@Test (priority = 3, dependsOnMethods= {"createUsers"})
 	void updateUser() {
 		
 		HashMap<String, String> hm = new HashMap<String, String>();
@@ -85,11 +84,25 @@ public class createUser {
 			.log().all();
 			
 		
-		
 	}
 	
 	
+	
+	@Test(priority = 4, dependsOnMethods= {"updateUser"})
 	void deleteUser() {
+		
+		
+		given()
+			.contentType("application/json")
+		
+		.when()
+			.delete("https://reqres.in/api/users/"+ID)
+		
+		.then()
+			.statusCode(204)
+			.log().body(); //there is not body for this request
+			
+		
 		
 	}
 	
