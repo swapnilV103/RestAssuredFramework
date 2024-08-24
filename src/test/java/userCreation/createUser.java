@@ -12,6 +12,14 @@ import io.restassured.http.ContentType;
 
 public class createUser {
 	
+	
+	/*In the given section : Content type, set cookies, add Auth, add parameters, set headers etc..
+	 * 
+	 */
+	
+	
+	
+	
 	int ID=0;
 
 	
@@ -76,6 +84,11 @@ public class createUser {
 			.log().all();
 			
 		
+		
+	}
+	
+	
+	void deleteUser() {
 		
 	}
 	
