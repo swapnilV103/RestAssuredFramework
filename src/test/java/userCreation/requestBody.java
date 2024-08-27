@@ -63,7 +63,7 @@ public class requestBody {
 		
 		
 		HashMap map = new HashMap();
-		
+		 
 		map.put("id", maxId+1);
 		map.put("name", "swapnil");
 		map.put("location", "baramati");
