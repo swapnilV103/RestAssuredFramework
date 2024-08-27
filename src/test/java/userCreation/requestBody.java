@@ -23,6 +23,7 @@ public class requestBody {
 		Response response = get("http://localhost:3000/people");
 		List<Integer> ids = response.jsonPath().getList("id", Integer.class);
         maxId = ids.stream().max(Integer::compare).orElse(0);
+        System.out.println(maxId);
       
         
 		
@@ -53,7 +54,7 @@ public class requestBody {
 			
 		.then()
 			.log().all();
-		
+		maxId++;
 		
 	}
 	
@@ -65,27 +66,26 @@ public class requestBody {
 		JSONObject data= new JSONObject();
 		
 		
-		HashMap map = new HashMap();
-		  
-		map.put("id", maxId+1);
-		map.put("name", "swapnil");
-		map.put("location", "baramati");
-		map.put("phone", "9047463323");
+		data.put("id", maxId+1);
+		data.put("name", "swapyyy");
+		data.put("location", "baramati");
+		data.put("phone", "9047463323");
 		
 		String arr[] = {"Python", "Java"};
 		//System.out.print(Arrays.toString(arr));
-		map.put("courses", arr);
+		data.put("courses", arr);
 		
 		
 		given()
 			.contentType("application/json")
-			.body(map)
+			.body(data.toString())
 			
 		.when()
 			.post("http://localhost:3000/people")
 			
 		.then()
 			.log().all();
+		maxId++;
 		
 		
 	}
