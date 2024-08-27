@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
@@ -60,6 +61,8 @@ public class requestBody {
 	
 	@Test (dependsOnMethods= {"currentIDfromDatabase"})
 	void createUserUsingJsonLibrary() {
+		
+		JSONObject data= new JSONObject();
 		
 		
 		HashMap map = new HashMap();
