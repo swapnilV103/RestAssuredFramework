@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import org.testng.annotations.Test;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 public class createUser {
@@ -24,9 +25,10 @@ public class createUser {
 	
 	//@Test
 	void getUsers() 
-	{
+	{   
 		
 		given()
+			
 		
 		.when()
 			.get("https://reqres.in/api/users?page=2")
