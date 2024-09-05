@@ -10,6 +10,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 public class requestBody {
@@ -24,9 +25,8 @@ public class requestBody {
 		List<Integer> ids = response.jsonPath().getList("id", Integer.class);
         maxId = ids.stream().max(Integer::compare).orElse(0);
         System.out.println(maxId);
+       
       
-        
-		
 			
 	}
 
@@ -79,6 +79,7 @@ public class requestBody {
 		given()
 			.contentType("application/json")
 			.body(data.toString())
+			
 			
 		.when()
 			.post("http://localhost:3000/people")
