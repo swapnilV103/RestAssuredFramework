@@ -69,6 +69,7 @@ public class BrearerToken {
 		
 		ID= response.jsonPath().getString("id");
 		
+		
 		System.out.println(ID);
 	}
 	
