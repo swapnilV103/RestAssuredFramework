@@ -28,6 +28,7 @@ public class createUser {
 	{   
 		
 		given()
+			.contentType("application/json")
 			
 		
 		.when()
