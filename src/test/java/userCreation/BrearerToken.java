@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
@@ -41,7 +42,7 @@ public class BrearerToken {
 		
 		JSONObject data = new JSONObject();
 		data.put("name", "swapnilI");
-		data.put("email", "jadshfaasoiuhgsdahkjjhh@gmail.com");
+		data.put("email", "jadshfaasoiuhgsdsderahkjjhh@gmail.com");
 		data.put("gender", "male");
 		data.put("status", "active");
 		
@@ -68,6 +69,7 @@ public class BrearerToken {
             .extract().response(); 
 		
 		ID= response.jsonPath().getString("id");
+		Assert.assertEquals(response.jsonPath().getString("id"), ID);
 		
 		
 		System.out.println(ID);
