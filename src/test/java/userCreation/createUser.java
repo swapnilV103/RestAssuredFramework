@@ -23,7 +23,7 @@ public class createUser {
 	int ID=0;
 
 	
-	//@Test
+	@Test
 	void getUsers() 
 	{   
 		
@@ -37,6 +37,7 @@ public class createUser {
 		.then()
 			.statusCode(200)
 			.body("data[0].id",equalTo(7))
+			.header("Content-Type",equalTo("application/json; charset=utf-8"))
 			//.log().body()
 			.log().all();		 //display entire response in the console
 		
