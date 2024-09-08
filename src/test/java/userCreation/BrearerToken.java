@@ -21,24 +21,30 @@ public class BrearerToken {
 	
 	
 	
-	@Test
+	@Test(priority=0)
 	void getUsersUsingPath() {
+		HashMap<String,String> map = new HashMap<>();
+		map.put("page", "1");
+		map.put("per_page", "5");
 		
 	Response resp =given()
 			.contentType("application/json")
-			.params("page","1","per_page","5")
+			.params(map)
 		.when()
 			.get("https://gorest.co.in/public/v2/users")
 		.then()
 		.statusCode(200)
 		.log().body()
 		.extract().response();
+	System.out.println("inside get User.................");
 	
 	
 	}
 	
-	@Test (priority=0)
+	@Test (priority=1)
 	public void withBearerToken() {
+		
+		
 		
 		JSONObject data = new JSONObject();
 		data.put("name", "swapnilI");
@@ -76,7 +82,7 @@ public class BrearerToken {
 	}
 	
 	
-	@Test (priority=0,dependsOnMethods="withBearerToken")
+	@Test (priority=1,dependsOnMethods="withBearerToken")
 	void deleteSameUser() {
 		
 		given()
