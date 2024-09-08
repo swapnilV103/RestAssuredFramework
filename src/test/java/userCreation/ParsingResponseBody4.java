@@ -23,7 +23,7 @@ public class ParsingResponseBody4 {
 	
 	
 	//firstnormal approch
-	@Test
+	//@Test
 	public void normalparsing() {
 		
 		
@@ -39,7 +39,7 @@ public class ParsingResponseBody4 {
 	
 	
 	//approach2
-		@Test
+		//@Test
 		public void Responseparsing() {
 		
 		
@@ -78,10 +78,16 @@ public class ParsingResponseBody4 {
 				.statusCode(200)
 				.header("Content-Type", "application/json")
 				.body("book[2].title",equalTo("Book three title"))
+				.body("book.title",hasItems("Book one title","Book two title"))
 				.extract().response();
 			
 			//now we can iterate through the books
 			JSONObject jo = new JSONObject(resp.asString());
+			
+			
+			
+			
+			
 			boolean status =false;
 			for(int i=0; i<jo.getJSONArray("book").length();i++) {
 				
@@ -100,6 +106,7 @@ public class ParsingResponseBody4 {
 				
 				String bookname = jo.getJSONArray("book").getJSONObject(i).get("price").toString();
 				sum+=Integer.parseInt(bookname);
+								
 			}
 			
 			System.out.println("The sum ...............is: "+sum);
