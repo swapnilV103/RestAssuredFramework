@@ -41,6 +41,13 @@ public class BrearerToken {
 	
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 	@Test (priority=1)
 	public void withBearerToken() {
 		
@@ -80,6 +87,10 @@ public class BrearerToken {
 		
 		System.out.println(ID);
 	}
+	
+	
+	
+	
 	
 	
 	@Test (priority=1,dependsOnMethods="withBearerToken")
