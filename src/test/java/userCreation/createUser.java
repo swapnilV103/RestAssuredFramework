@@ -29,10 +29,11 @@ public class createUser {
 		
 		given()
 			.contentType("application/json")
+			.param("page", "2")
 			
 		
 		.when()
-			.get("https://reqres.in/api/users?page=2")
+			.get("https://reqres.in/api/users")
 		
 		.then()
 			.statusCode(200)
