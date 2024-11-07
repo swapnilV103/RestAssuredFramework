@@ -30,6 +30,7 @@ public class BrearerToken {
 	Response resp =given()
 			.contentType("application/json")
 			.params(map)
+			
 		.when()
 			.get("https://gorest.co.in/public/v2/users")
 		.then()

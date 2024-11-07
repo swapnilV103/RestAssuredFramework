@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 public class createUser {
 	
@@ -97,7 +98,7 @@ public class createUser {
 	void deleteUser() {
 		
 		
-		given()
+	Response resp =	RestAssured.given()
 			.contentType("application/json")
 		
 		.when()
@@ -105,7 +106,8 @@ public class createUser {
 		
 		.then()
 			.statusCode(204)
-			.log().body(); //there is not body for this request
+			.log().body()
+			.extract().response();//there is not body for this request
 			
 		
 		

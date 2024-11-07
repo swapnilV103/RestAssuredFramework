@@ -37,7 +37,7 @@ public class UpdateUser {
 		
 		
 		
-		Response resp =given()
+		Response resp =RestAssured.given()
 			.contentType("application/json")
 			.auth().oauth2("206250362681fdc8c6e36db62cbd1328fe5ed3a399960867c23ea1016d596f78")
 			.body(data.toString())
